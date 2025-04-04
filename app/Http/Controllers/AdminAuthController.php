@@ -7,6 +7,11 @@ use Illuminate\Support\Facades\Auth;
 
 class AdminAuthController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('guest:admin')->except('logout');
+    }
+    
     public function showLoginForm()
     {
         return view('admin.auth.login');
@@ -19,7 +24,7 @@ class AdminAuthController extends Controller
             'password' => 'required'
         ]);
         
-        if (Auth::guard('admin')->attempt($credentials)) {
+        if (Auth::guard('admin')->attempt($credentials, $request->boolean('remember'))) {
             $request->session()->regenerate();
             return redirect()->intended('/admin/dashboard');
         }

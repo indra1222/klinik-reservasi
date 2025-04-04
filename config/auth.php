@@ -35,22 +35,22 @@ return [
     |
     */
 
-    'guards' => [
-        'web' => [
-            'driver' => 'session',
-            'provider' => 'users',
-        ],
-        
-        'pasien' => [
-            'driver' => 'session',
-            'provider' => 'pasien',
-        ],
-        
-        'admin' => [
-            'driver' => 'session',
-            'provider' => 'admin',
-        ],
+'guards' => [
+    'web' => [
+        'driver' => 'session',
+        'provider' => 'users',
     ],
+    
+    'pasien' => [
+        'driver' => 'session',
+        'provider' => 'pasien',
+    ],
+    
+    'admin' => [
+        'driver' => 'session',
+        'provider' => 'admin',
+    ],
+],
 
     /*
     |--------------------------------------------------------------------------
@@ -69,22 +69,22 @@ return [
     |
     */
 
-        'providers' => [
-        'users' => [
-            'driver' => 'eloquent',
-            'model' => App\Models\User::class,
-        ],
-        
-        'pasien' => [
-            'driver' => 'eloquent',
-            'model' => App\Models\Pasien::class,
-        ],
-        
-        'admin' => [
-            'driver' => 'eloquent',
-            'model' => App\Models\Admin::class,
-        ],
+    'providers' => [
+    'users' => [
+        'driver' => 'eloquent',
+        'model' => App\Models\User::class,
     ],
+    
+    'pasien' => [
+        'driver' => 'eloquent',
+        'model' => App\Models\Pasien::class,
+    ],
+    
+    'admin' => [
+        'driver' => 'eloquent',
+        'model' => App\Models\Admin::class,
+    ],
+],
 
     /*
     |--------------------------------------------------------------------------

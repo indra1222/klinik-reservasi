@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Klinik Reservasi</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         .sidebar {
@@ -52,6 +51,22 @@
                                 <i class="fas fa-calendar-check me-2"></i>
                                 Kelola Reservasi
                             </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {{ request()->routeIs('admin.trash.*') ? 'active' : '' }}" href="#" data-bs-toggle="collapse" data-bs-target="#trashSubmenu">
+                                <i class="fas fa-trash-alt me-2"></i>
+                                Sampah
+                            </a>
+                            <div class="collapse {{ request()->routeIs('admin.trash.*') ? 'show' : '' }}" id="trashSubmenu">
+                                <ul class="nav flex-column ms-3">
+                                    <li class="nav-item">
+                                        <a class="nav-link {{ request()->routeIs('admin.trash.dokter') ? 'active' : '' }}" href="{{ route('admin.trash.dokter') }}">Dokter</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link {{ request()->routeIs('admin.trash.reservasi') ? 'active' : '' }}" href="{{ route('admin.trash.reservasi') }}">Reservasi</a>
+                                    </li>
+                                </ul>
+                            </div>
                         </li>
                         <li class="nav-item mt-5">
                             <form action="{{ route('admin.logout') }}" method="POST">

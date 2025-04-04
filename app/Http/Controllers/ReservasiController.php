@@ -120,7 +120,9 @@ class ReservasiController extends Controller
                             ->with('error', 'Hanya reservasi dengan status pending yang dapat dibatalkan');
         }
         
+        // Update status dan soft delete
         $reservasi->update(['status' => 'cancelled']);
+        $reservasi->delete();
         
         return redirect()->route('reservasi.index')
                         ->with('success', 'Reservasi berhasil dibatalkan');

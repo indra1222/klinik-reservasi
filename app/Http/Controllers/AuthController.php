@@ -10,6 +10,11 @@ use Illuminate\Support\Facades\Validator;
 
 class AuthController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('guest:pasien')->except('logout');
+    }
+    
     public function showLoginForm()
     {
         return view('auth.login');
@@ -22,7 +27,7 @@ class AuthController extends Controller
             'password' => 'required'
         ]);
         
-        if (Auth::guard('pasien')->attempt($credentials)) {
+        if (Auth::guard('pasien')->attempt($credentials, $request->boolean('remember'))) {
             $request->session()->regenerate();
             return redirect()->intended('/dashboard');
         }

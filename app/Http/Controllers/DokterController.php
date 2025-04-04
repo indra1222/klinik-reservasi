@@ -39,6 +39,11 @@ class DokterController extends Controller
                         ->with('success', 'Dokter berhasil ditambahkan');
     }
     
+    public function show(Dokter $dokter)
+    {
+        return view('admin.dokter.show', compact('dokter'));
+    }
+    
     public function edit(Dokter $dokter)
     {
         return view('admin.dokter.edit', compact('dokter'));

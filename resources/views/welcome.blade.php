@@ -9,6 +9,7 @@
     @guest('pasien')
         <a class="btn btn-primary btn-lg" href="{{ route('login') }}" role="button">Login</a>
         <a class="btn btn-success btn-lg" href="{{ route('register') }}" role="button">Register</a>
+        <a class="btn btn-dark btn-lg" href="{{ route('admin.login') }}" role="button">Admin Login</a>
     @else
         <a class="btn btn-primary btn-lg" href="{{ route('reservasi.create') }}" role="button">Buat Reservasi</a>
     @endguest
@@ -79,5 +80,9 @@
             </div>
         </div>
     </div>
+</div>
+
+<div class="mt-4 text-center">
+    <p class="text-muted">Apakah Anda admin? <a href="{{ route('admin.login') }}">Login sebagai Admin</a></p>
 </div>
 @endsection
