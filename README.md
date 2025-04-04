@@ -14,11 +14,14 @@ Website ini dikembangkan menggunakan framework Laravel dan database MySQL. Siste
 
 ## Anggota Kelompok 10
 
-- Indra Mauludani Efendi (40102)
-- Rifki Arief Fadhillah Roboth (40126)
-- Dhinda Cahya Ramadhani (20029)
-- Fadia Nur Fatimah (40171)
-- Lady Triana Surbakti (40162)
+- Indra Mauludani Efendi 
+- Listyawan Femil Anaki 
+- Rifki Arief Fadhillah Roboth 
+- Azriel Fawwaz Maulana 
+- Dhinda Cahya Ramadhani 
+- Faiza Tanjia 
+- Fadia Nur Fatimah 
+- Lady Triana Surbakti 
 
 ## Fitur
 
